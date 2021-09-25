@@ -11,9 +11,9 @@ const firebaseConfig = {
   measurementId: "G-J530NVKVQQ"
 };
 
-let app;
+
 if(!firebase.apps.length) {
- app= firebase.initializeApp(firebaseConfig);
+ firebase.initializeApp(firebaseConfig);
 }
 
 export const auth=firebase.auth();
