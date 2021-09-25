@@ -5,12 +5,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
 import {UserProvider} from './Context/user'
+import { WorkoutContextProvider } from './Context/WorkoutContext';
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <UserProvider>
+        <WorkoutContextProvider>
         <App />
+        </WorkoutContextProvider>
       </UserProvider>
     </Router>
   </React.StrictMode>,
