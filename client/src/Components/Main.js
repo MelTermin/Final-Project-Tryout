@@ -1,15 +1,14 @@
-import React, {useContext} from 'react'
-import UserContext from '../Context/user'
+import React from 'react'
+
 import { Link} from 'react-router-dom';
+import TopBar from './TopBar';
 
 
 function Main() {
-  const {user}=useContext(UserContext)
+ 
   return (
     <div>
-      <div className="profile-wrapper" > 
-      <div className="profile-name">  {user && user.displayName.charAt(0).toUpperCase()}</div>
-      </div>
+      <TopBar/>
      
       <div className="home-container">
         <div className="home-container-titles">

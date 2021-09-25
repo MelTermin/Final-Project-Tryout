@@ -3,6 +3,7 @@ import {useState,useContext} from 'react'
 import {WorkoutContext} from "../Context/WorkoutContext"
 import ListItem from './ListItem';
 import axios from 'axios';
+import TopBar from './TopBar';
 
 
 function Form() {
@@ -43,11 +44,12 @@ function Form() {
   }
     return (
       
-      <div className="main-page-wrapper">
-      
-      <div className="main">
+
+     <div className="form-wrapper">
+       <TopBar/>
      
         <form className="workout-details-form" onSubmit= {handleSubmit} >
+          <br/>
         <h1>Workout Detail Form</h1>
           
           <label>Name of exercise:</label>
@@ -65,7 +67,7 @@ function Form() {
           <label>Date:</label>
           <input type="date" value={date} name="date" onChange={e => setDate(e.target.value)}></input>
           
-     
+          <br/>
           <button className="add-btn" >ADD</button>
       
           {submitting &&
@@ -85,8 +87,8 @@ function Form() {
     
   
         <ListItem></ListItem>
-      </div>
-     </div>
+  </div>
+    
     )
   }
   
