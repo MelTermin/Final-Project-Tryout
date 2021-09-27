@@ -1,5 +1,5 @@
 import React from 'react'
-import TopBar from './TopBar'
+
 import {useState,useEffect,useContext} from 'react'
 import {WorkoutContext} from '../Context/WorkoutContext'
 
@@ -70,7 +70,7 @@ console.log(workoutDetails)
   
  
     <div className="main">
-       <TopBar/>
+       
       <br/>
       <br/>
       <div className="search-container">

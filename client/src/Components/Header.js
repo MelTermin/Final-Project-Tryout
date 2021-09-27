@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import UserContext from '../Context/user';
 import { Link, useHistory } from 'react-router-dom';
-import Pic from '../images/pic2.jpeg'
+
 import { RiHome4Line } from 'react-icons/ri';
 import { BiSpreadsheet } from 'react-icons/bi';
 import { MdFitnessCenter } from 'react-icons/md';
@@ -29,7 +29,9 @@ function Header() {
            <nav  className="nav">
  
         <ul className="nav-links">
-        <img className="logo" src={Pic} alt="logo"></img>
+        <div className="profile-wrapper" > 
+           <div className="profile-name">  {user && user.displayName.charAt(0).toUpperCase()}</div>
+        </div>
 
     
         <Link className="link" to="/" >

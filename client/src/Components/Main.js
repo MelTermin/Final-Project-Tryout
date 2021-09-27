@@ -1,14 +1,15 @@
 import React from 'react'
 
+
 import { Link} from 'react-router-dom';
-import TopBar from './TopBar';
+
 
 
 function Main() {
- 
+
   return (
     <div>
-      <TopBar/>
+  
      
       <div className="home-container">
         <div className="home-container-titles">

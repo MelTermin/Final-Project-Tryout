@@ -3,7 +3,7 @@ import {useState,useContext} from 'react'
 import {WorkoutContext} from "../Context/WorkoutContext"
 import ListItem from './ListItem';
 import axios from 'axios';
-import TopBar from './TopBar';
+
 
 
 function Form() {
@@ -46,7 +46,7 @@ function Form() {
       
 
      <div className="form-wrapper">
-       <TopBar/>
+       
      
         <form className="workout-details-form" onSubmit= {handleSubmit} >
           <br/>

@@ -2,7 +2,8 @@ import React,{useState} from 'react'
 import emailjs from 'emailjs-com';
 import Message from './Message';
 import axios from 'axios'
-import TopBar from './TopBar'
+
+
 
 function Contact() {
   const [firstname, setFirstName]=useState("");
@@ -38,15 +39,14 @@ function Contact() {
     setIsSent(false)
   },6000)
   return (
-    <div>
-     <TopBar></TopBar>
+  <div>
 
-     <div class="contact-box">
-     <div class="left"></div>
-     <div class="right">
-        <form onSubmit= {handleSubmit}>
-        <h3>SEND US A MESSAGE</h3>
-        <br></br>
+<div class="container">
+		<div class="contact-box">
+			<div class="left"></div>
+			<div class="right">
+        <form onSubmit= {handleSubmit} >
+				<h2>Contact Us</h2>
         <label>First Name:</label>
         <input className="field" type="text" value= {firstname}  name="firstname"onChange={e => setFirstName(e.target.value)} ></input>
 
@@ -57,18 +57,27 @@ function Contact() {
         <input className="field" type="text" value= {email} name="email" onChange={e => setEmail(e.target.value)}></input>
 
         <label>Message:</label>
-        <textarea  className="field" type="text" value= {message} name="message" onChange={e => setMessage(e.target.value)}></textarea>
+        <textarea   type="text" value= {message} name="message" onChange={e => setMessage(e.target.value)}></textarea>
         
         <br></br>
-        <div >{isSent ? <Message/>:null}</div>
+        <div >{isSent ? <Message />:null}</div>
         <br></br>
-        <button className="contact-btn" type="submit"   >Send</button>
-        
-        </form> 
+        <button className="contact-btn" type="submit"  >Send</button>
+			</form>
 			</div>
-      </div>
-    </div>
-  )
+		</div>
+	</div>
+  </div>
+
+          
+        
+ 
+      
+
+ )
+
 }
+  
+
 
 export default Contact
