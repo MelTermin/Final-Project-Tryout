@@ -30,7 +30,11 @@ function Header() {
  
         <ul className="nav-links">
         <div className="profile-wrapper" > 
+      
            <div className="profile-name">  {user && user.displayName.charAt(0).toUpperCase()}</div>
+           <br/>
+           <br/>
+           <div style= {{color:"white", textAlign:"center"}}> {user && user.email} </div>
         </div>
 
     

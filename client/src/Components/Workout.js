@@ -7,6 +7,30 @@ function Workout() {
 
   const {workoutDetails,setWorkOutDetails}=useContext(WorkoutContext)
   const [searchWorkOut, setSearchWorkOut]= useState("")
+  const selectedDetails= [
+    {
+      id:1,
+      name:"equipment",
+      value:"equipment"
+    },
+    {
+      id:2,
+      name:"target",
+      value:"target"
+    },
+    {
+      id:3,
+      name:"bodyPart",
+      value:"bodyPart"
+      
+    },
+  ]
+
+  const [optionValue, setOptionValue] = useState("");
+  const handleSelect = (e) => {
+    console.log(e.target.value);
+    setOptionValue(e.target.value);
+  };
  
   const [seconds, setSeconds] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
@@ -32,13 +56,13 @@ function Workout() {
     return () => clearInterval(interval);
   }, [isActive, seconds]);
 
-  
+
 
   const handleWorkOut= () => {
 
  setIsLoading(true)
 
-  fetch(`https://exercisedb.p.rapidapi.com/exercises/bodyPart/${searchWorkOut}`, {
+  fetch(`https://exercisedb.p.rapidapi.com/exercises/${optionValue}/${searchWorkOut}`, {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "exercisedb.p.rapidapi.com",
@@ -76,7 +100,17 @@ console.log(workoutDetails)
       <div className="search-container">
         
         <div className="search-box">
+      
           <input className="workout-search" type="text" placeholder="Please search for a body part exercise..." value= {searchWorkOut} onChange= {(e)=>setSearchWorkOut(e.target.value)}></input>
+          <select onChange={handleSelect} >
+            {selectedDetails.map((item)=> {
+              return(
+                <option value= {item.value} key= {item.id}>{item.name }</option>
+                
+              )
+            })}
+        
+          </select>
           <button className="button-search" onClick= {handleWorkOut}>Search</button>
 
           {isLoading &&
@@ -105,13 +139,13 @@ console.log(workoutDetails)
           workoutDetails.slice(0,18).map((item) => {
           return (
             
-            <div className="workout-container"  >
+            <div className="workout-container"  key= {item.id} >
                <p className="title-workout">Body Part:{item.bodyPart}</p>
               {/* <p className="title-workout">{item.name.charAt(0).toUpperCase() + item.name.slice(1)}</p> */}
               <img className="gif" src= {item.gifUrl} alt="gif"></img>
             
   
-              <div className="workout-details"> 
+              <div className="workout-details" > 
                 <p>Equipment:{item.equipment} </p>
                 <p>Target:{item.target}</p>
               </div>

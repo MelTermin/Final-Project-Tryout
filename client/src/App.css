@@ -142,9 +142,10 @@ justify-content: space-between;
 /* Main Page */
 
 .profile-wrapper {
-  /* border: 2px solid slateblue; */
+
   background-color: #191d2b;
-  margin-top: 30px;
+  margin: 30px;
+  text-align: center;
 
 
 }
