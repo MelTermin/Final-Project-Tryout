@@ -8,19 +8,20 @@ function Workout() {
   const {workoutDetails,setWorkOutDetails}=useContext(WorkoutContext)
   const [searchWorkOut, setSearchWorkOut]= useState("")
   const selectedDetails= [
+   
     {
       id:1,
-      name:"equipment",
+      name:"Equipment",
       value:"equipment"
     },
     {
       id:2,
-      name:"target",
+      name:"Target",
       value:"target"
     },
     {
       id:3,
-      name:"bodyPart",
+      name:"Body Part",
       value:"bodyPart"
       
     },
@@ -100,9 +101,7 @@ console.log(workoutDetails)
       <div className="search-container">
         
         <div className="search-box">
-      
-          <input className="workout-search" type="text" placeholder="Please search for a body part exercise..." value= {searchWorkOut} onChange= {(e)=>setSearchWorkOut(e.target.value)}></input>
-          <select onChange={handleSelect} >
+        <select onChange={handleSelect} >
             {selectedDetails.map((item)=> {
               return(
                 <option value= {item.value} key= {item.id}>{item.name }</option>
@@ -111,6 +110,9 @@ console.log(workoutDetails)
             })}
         
           </select>
+      
+          <input className="workout-search" type="text" placeholder="Please search for exercise type..." value= {searchWorkOut} onChange= {(e)=>setSearchWorkOut(e.target.value)}></input>
+         
           <button className="button-search" onClick= {handleWorkOut}>Search</button>
 
           {isLoading &&
