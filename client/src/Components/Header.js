@@ -46,12 +46,13 @@ function Header() {
         </div>
 
 
-
+        
         <Link className="link" to="/" >
           <div style={{display: "flex", justifyContent: "space-between"}}>
             <RiHome4Line className="icons-nav" color="white"  size={22}/><li className="nav-li" style= {{marginLeft:"10px"}}>Home</li>
           </div>
       </Link>
+      
 
         <Link className="link" to="/form" >
           <div style={{display: "flex", justifyContent: "space-between"}}>

@@ -75,7 +75,7 @@ const handleEdit= async (id) => {
   
   return (
     <div className="items">
-      <h1>Workout Tracker Item</h1>
+      <h1>Workout Tracker Chart</h1>
 
         <div  >
           { details.map((item) => (
