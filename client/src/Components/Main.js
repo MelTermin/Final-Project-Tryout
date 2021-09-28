@@ -1,17 +1,17 @@
 import React from 'react'
-
-
 import { Link} from 'react-router-dom';
 
 
 
 function Main() {
 
+
   return (
     <div>
   
      
       <div className="home-container">
+      
         <div className="home-container-titles">
           <div><h2>Node.js Weight Tracker with Postgres SQL & React</h2></div>
           <br></br>

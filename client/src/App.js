@@ -9,17 +9,20 @@ import Form from './Components/Form';
 import Header from './Components/Header';
 import Home from './Components/Home';
 import Main from './Components/Main';
+
 import './App.css';
 
 
 function App() {
+
  
   return (
     <div className="page-wrapper">
     <div >
       <Header></Header>
     </div>
-
+    
+ 
   <Switch>
     <div className="main-content">
      <Route exact path="/" component={Home} />
