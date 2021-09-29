@@ -138,7 +138,7 @@ console.log(workoutDetails)
          <div className="card-container">
         
         {
-          workoutDetails.slice(0,18).map((item) => {
+          workoutDetails.slice(0,30).map((item) => {
           return (
             
             <div className="workout-container"  key= {item.id} >

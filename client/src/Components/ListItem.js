@@ -75,7 +75,8 @@ const handleEdit= async (id) => {
   
   return (
     <div className="items">
-      <h1>Workout Tracker Chart</h1>
+    
+    
 
         <div  >
           { details.map((item) => (
@@ -107,8 +108,11 @@ const handleEdit= async (id) => {
                   <Background></Background>
                 </div>): (
             <div className="details-container" >
+
+             
         
             <div className="item" >
+           
               <div>{item.exercise}</div>
               <div>{item.repetition} rep</div>
               <div>{item.weight} kg</div>
@@ -122,8 +126,11 @@ const handleEdit= async (id) => {
             </div>)
             }
           </div>
+         
             ))}
+            
         </div>
+        
         <ProgressChart></ProgressChart>
     </div>
   )

@@ -16,13 +16,14 @@ function Form() {
   const [duration,setDuration]=useState("")
   const [date,setDate]=useState("")
   const [submitting, setSubmitting] = useState(false);
+ 
   
   
   
   
   const handleSubmit = (e)=> {
     e.preventDefault()
-  
+   
     setSubmitting(true);
     axios.post("http://localhost:4000/tracker", {
       exercise,repetition,weight,duration,date
@@ -36,6 +37,7 @@ function Form() {
     setExercise("")
     setRepition("")
     setDate("")
+   
   
     setTimeout(() => {
       setSubmitting(false);
@@ -48,27 +50,27 @@ function Form() {
      <div className="form-wrapper">
        
      
-        <form className="workout-details-form" onSubmit= {handleSubmit} >
+        <form className="workout-details-form" onSubmit= {handleSubmit}   >
           <br/>
         <h1>Workout Detail Form</h1>
           
           <label>Name of exercise:</label>
-          <input type="text" value= {exercise}  name="exercise"onChange={e => setExercise(e.target.value)} placeholder="Please type a exercise " ></input>
+          <input required type="text" value= {exercise}  name="exercise"onChange={e => setExercise(e.target.value)} placeholder="Please type a exercise " ></input>
   
           <label>Number of repetition:</label>
-          <input type="number" value= {repetition} name="repetition" onChange={e => setRepition(e.target.value)} placeholder="Repetition " ></input>
+          <input required type="number" value= {repetition} name="repetition" onChange={e => setRepition(e.target.value)} placeholder="Repetition " ></input>
   
           <label>Current Weight:</label>
-          <input type="number" value= {weight} name="weight" onChange={e => setWeight(e.target.value)} placeholder="Weight" ></input>
+          <input required type="number" value= {weight} name="weight" onChange={e => setWeight(e.target.value)} placeholder="Weight" ></input>
   
           <label>Duration:</label>
-          <input type="number" value= {duration} name="duration" onChange={e => setDuration(e.target.value)} placeholder="Duration" ></input>
+          <input required type="number" value= {duration} name="duration" onChange={e => setDuration(e.target.value)} placeholder="Duration" ></input>
   
           <label>Date:</label>
-          <input type="date" value={date} name="date" onChange={e => setDate(e.target.value)}></input>
+          <input required type="date" value={date} name="date" onChange={e => setDate(e.target.value)}></input>
           
           <br/>
-          <button className="add-btn" >ADD</button>
+          <button className="add-btn"  >ADD</button>
       
           {submitting &&
               <div class="loader1"> 
@@ -85,8 +87,8 @@ function Form() {
         </form>
         
     
-  
-        <ListItem></ListItem>
+       <ListItem></ListItem>
+       
   </div>
     
     )

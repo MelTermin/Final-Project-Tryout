@@ -36,16 +36,14 @@ function Header() {
  
         <ul className="nav-links">
         <div className="profile-wrapper" > 
-       
-     
-      
            <div className="profile-name">  {user && user.displayName.charAt(0).toUpperCase()}</div>
            <br/>
            <br/>
            <div className="email-text" style= {{color:"white", textAlign:"center"}}> {user && user.email} </div>
+           <div className="break-line"></div>
         </div>
 
-
+        
         
         <Link className="link" to="/" >
           <div style={{display: "flex", justifyContent: "space-between"}}>
